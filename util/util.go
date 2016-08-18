@@ -2,20 +2,20 @@
 package util
 
 import (
+	"bytes"
+	"encoding/binary"
 	"fmt"
 	"hash/fnv"
 	"reflect"
-	"bytes"
-	"encoding/binary"
 )
 
-// Simple 2D vector struct
-type Vector struct {
+// Vertex is a simple 2D point
+type Vertex struct {
 	X, Y int32
 }
 
-// Hashes the given value, first by reflecting the value (which is likely a
-// struct) and converting each part into bytes which gets fed into the hash.
+// Hash32 provides a hash of the given struct, first by reflecting the struct
+// value and converting each part into bytes which gets fed into the hash.
 // Because reflection only gives access to exposed members, changes to unexposed
 // members will not affect the hash.
 func Hash32(i interface{}) uint32 {

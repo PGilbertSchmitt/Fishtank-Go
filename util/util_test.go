@@ -4,12 +4,12 @@ import "testing"
 
 func TestHash32(t *testing.T) {
 	var goodHash = []struct {
-		in	Vector	// Input
-		out	uint32		// Expected Output
+		in  Vector // Input
+		out uint32 // Expected Output
 	}{
 		{Vector{1, 4}, 1810974526},
 		{Vector{5, 7}, 1391114847},
-		{Vector{-4,9}, 1447020315},
+		{Vector{-4, 9}, 1447020315},
 	}
 
 	for _, v := range goodHash {
