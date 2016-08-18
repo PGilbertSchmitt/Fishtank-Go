@@ -9,11 +9,6 @@ import (
 	"reflect"
 )
 
-// Vertex is a simple 2D point
-type Vertex struct {
-	X, Y int32
-}
-
 // Hash32 provides a hash of the given struct, first by reflecting the struct
 // value and converting each part into bytes which gets fed into the hash.
 // Because reflection only gives access to exposed members, changes to unexposed
